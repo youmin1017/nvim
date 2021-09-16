@@ -74,7 +74,6 @@ _G.packer_plugins = {
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
   ["completion-nvim"] = {
-    config = { '\27LJ\1\2=\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0"usermod.configures.completion\frequire\0' },
     loaded = true,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/completion-nvim"
   },
@@ -126,6 +125,7 @@ _G.packer_plugins = {
     path = "/home/youmin/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
   ["palenightfall.nvim"] = {
+    config = { "\27LJ\1\2@\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0%usermod.configures.palenightfall\frequire\0" },
     loaded = true,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/palenightfall.nvim"
   },
@@ -144,18 +144,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: galaxyline.nvim
-time([[Config for galaxyline.nvim]], true)
-try_loadstring('\27LJ\1\2=\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0"usermod.configures.statusline\frequire\0', "config", "galaxyline.nvim")
-time([[Config for galaxyline.nvim]], false)
+-- Config for: palenightfall.nvim
+time([[Config for palenightfall.nvim]], true)
+try_loadstring("\27LJ\1\2@\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0%usermod.configures.palenightfall\frequire\0", "config", "palenightfall.nvim")
+time([[Config for palenightfall.nvim]], false)
 -- Config for: indent-blankline.nvim
 time([[Config for indent-blankline.nvim]], true)
 try_loadstring("\27LJ\1\2>\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0#usermod.configures.indent-line\frequire\0", "config", "indent-blankline.nvim")
 time([[Config for indent-blankline.nvim]], false)
--- Config for: completion-nvim
-time([[Config for completion-nvim]], true)
-try_loadstring('\27LJ\1\2=\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0"usermod.configures.completion\frequire\0', "config", "completion-nvim")
-time([[Config for completion-nvim]], false)
+-- Config for: galaxyline.nvim
+time([[Config for galaxyline.nvim]], true)
+try_loadstring('\27LJ\1\2=\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0"usermod.configures.statusline\frequire\0', "config", "galaxyline.nvim")
+time([[Config for galaxyline.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

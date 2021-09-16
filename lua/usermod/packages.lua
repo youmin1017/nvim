@@ -21,11 +21,12 @@ return require('packer').startup(function(use)
       {'junegunn/fzf.vim'},  -- to enable preview (optional)
     },
   }
-  use {'nvim-lua/completion-nvim', config = function() require('usermod.configures.completion') end, }
+  use 'nvim-lua/completion-nvim'
 
   -- Colorscheme
   use {
-    'JoosepAlviste/palenightfall.nvim'
+    'JoosepAlviste/palenightfall.nvim',
+    config = function() require('usermod.configures.palenightfall') end,
   }
 
   -- Status Line
