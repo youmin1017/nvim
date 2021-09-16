@@ -26,6 +26,11 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
+"""" Smoothi
+let g:smoothie_no_default_mappings = 1
+nmap <silent> <M-j> <cmd>call smoothie#downwards() <CR>
+nmap <silent> <M-k> <cmd>call smoothie#upwards()   <CR>
+
 """" Completion
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"

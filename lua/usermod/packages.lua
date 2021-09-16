@@ -21,12 +21,11 @@ return require('packer').startup(function(use)
       {'junegunn/fzf.vim'},  -- to enable preview (optional)
     },
   }
-  use 'nvim-lua/completion-nvim'
+  use {'nvim-lua/completion-nvim', config = function() require('usermod.configures.completion') end, }
 
   -- Colorscheme
   use {
-    'JoosepAlviste/palenightfall.nvim',
-    config = function() require('usermod.configures.palenightfall') end,
+    'JoosepAlviste/palenightfall.nvim'
   }
 
   -- Status Line
@@ -54,6 +53,9 @@ return require('packer').startup(function(use)
   use { -- Fuzzy finder
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use { -- Smoothie
+    'psliwka/vim-smoothie'
   }
   
   -- Indent Line
