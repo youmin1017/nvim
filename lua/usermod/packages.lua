@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
 
   -- Status Line
   use {
-  'glepnir/galaxyline.nvim',
+    'glepnir/galaxyline.nvim',
     branch = 'main',
     -- your statusline
     config = function() require'usermod.configures.statusline' end,
@@ -55,7 +55,5 @@ return require('packer').startup(function(use)
   
   -- Misc
   use 'kyazdani42/nvim-web-devicons'
-  use {'neoclide/coc.nvim', branch = 'release'}
-
 
 end)
