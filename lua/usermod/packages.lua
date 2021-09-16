@@ -12,7 +12,16 @@ return require('packer').startup(function(use)
   -- Packer itself
   use {'wbthomason/packer.nvim', opt = true}
   
-  use 'jiangmiao/auto-pairs'
+  -- LSP
+  use 'neovim/nvim-lspconfig'
+  use {
+    'ojroques/nvim-lspfuzzy',
+    requires = {
+      {'junegunn/fzf'},
+      {'junegunn/fzf.vim'},  -- to enable preview (optional)
+    },
+  }
+  use 'nvim-lua/completion-nvim'
 
   -- Colorscheme
   use {
@@ -52,6 +61,9 @@ return require('packer').startup(function(use)
     'lukas-reineke/indent-blankline.nvim',
     config = function() require('usermod.configures.indent-line') end,
   } 
+
+  -- Auto Pair
+  use 'jiangmiao/auto-pairs'
   
   -- Misc
   use 'kyazdani42/nvim-web-devicons'

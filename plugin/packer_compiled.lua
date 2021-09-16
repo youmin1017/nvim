@@ -73,6 +73,18 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
+  ["completion-nvim"] = {
+    loaded = true,
+    path = "/home/youmin/.local/share/nvim/site/pack/packer/start/completion-nvim"
+  },
+  fzf = {
+    loaded = true,
+    path = "/home/youmin/.local/share/nvim/site/pack/packer/start/fzf"
+  },
+  ["fzf.vim"] = {
+    loaded = true,
+    path = "/home/youmin/.local/share/nvim/site/pack/packer/start/fzf.vim"
+  },
   ["galaxyline.nvim"] = {
     config = { '\27LJ\1\2=\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0"usermod.configures.statusline\frequire\0' },
     loaded = true,
@@ -82,6 +94,14 @@ _G.packer_plugins = {
     config = { "\27LJ\1\2>\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0#usermod.configures.indent-line\frequire\0" },
     loaded = true,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/youmin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-lspfuzzy"] = {
+    loaded = true,
+    path = "/home/youmin/.local/share/nvim/site/pack/packer/start/nvim-lspfuzzy"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
