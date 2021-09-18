@@ -58,6 +58,9 @@ return require('packer').startup(function(use)
   use { -- Smoothie
     'psliwka/vim-smoothie'
   }
+
+  -- Comment
+  use 'tpope/vim-commentary'
   
   -- Indent Line
   use { 

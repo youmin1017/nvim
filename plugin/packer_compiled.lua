@@ -137,6 +137,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/home/youmin/.local/share/nvim/site/pack/packer/start/vim-commentary"
+  },
   ["vim-smoothie"] = {
     loaded = true,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/vim-smoothie"
