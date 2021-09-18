@@ -37,12 +37,14 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 """" LSP
-nnoremap <silent><leader>ls <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent><leader>lr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent><leader>ld <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent><leader>la <cmd>lua vim.lsp.buf.code_action()<CR>
-nnoremap <silent><leader>lk <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent><leader>lj <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> <leader>ls <cmd>lua vim.lsp.buf.document_symbol()  <CR>
+nnoremap <silent> <leader>lr <cmd>lua vim.lsp.buf.references()       <CR>
+nnoremap <silent> <leader>ld <cmd>lua vim.lsp.buf.definition()       <CR>
+nnoremap <silent> <leader>la <cmd>lua vim.lsp.buf.code_action()      <CR>
+nnoremap <silent> <leader>lk <cmd>lua vim.lsp.diagnostic.goto_prev() <CR>
+nnoremap <silent> <leader>lj <cmd>lua vim.lsp.diagnostic.goto_next() <CR>
+nnoremap <silent> <leader>lf <cmd>lua vim.lsp.buf.formatting()       <CR>
+nnoremap <silent> <leader>ln <cmd>lua vim.lsp.buf.rename()           <CR>
 
 """" Nvim Tree
 nnoremap <leader>T :NvimTreeToggle<CR>
