@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
       {'junegunn/fzf.vim'},  -- to enable preview (optional)
     },
   }
+  -- Completion
   use 'nvim-lua/completion-nvim'
 
   -- Colorscheme
@@ -53,6 +54,7 @@ return require('packer').startup(function(use)
   }
   use { -- Fuzzy finder
     'nvim-telescope/telescope.nvim',
+    config = function() require('usermod.configures.telescope') end,
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use { -- Smoothie
