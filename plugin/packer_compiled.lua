@@ -95,6 +95,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
   },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/home/youmin/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
@@ -119,15 +123,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/youmin/.local/share/nvim/site/pack/packer/start/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/opt/packer.nvim"
-  },
-  ["palenightfall.nvim"] = {
-    config = { "\27LJ\1\2@\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0%usermod.configures.palenightfall\frequire\0" },
-    loaded = true,
-    path = "/home/youmin/.local/share/nvim/site/pack/packer/start/palenightfall.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -149,14 +152,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: palenightfall.nvim
-time([[Config for palenightfall.nvim]], true)
-try_loadstring("\27LJ\1\2@\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0%usermod.configures.palenightfall\frequire\0", "config", "palenightfall.nvim")
-time([[Config for palenightfall.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-try_loadstring("\27LJ\1\2>\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0#usermod.configures.indent-line\frequire\0", "config", "indent-blankline.nvim")
-time([[Config for indent-blankline.nvim]], false)
 -- Config for: galaxyline.nvim
 time([[Config for galaxyline.nvim]], true)
 try_loadstring('\27LJ\1\2=\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0"usermod.configures.statusline\frequire\0', "config", "galaxyline.nvim")
@@ -165,6 +160,10 @@ time([[Config for galaxyline.nvim]], false)
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\1\2<\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0!usermod.configures.telescope\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+try_loadstring("\27LJ\1\2>\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0#usermod.configures.indent-line\frequire\0", "config", "indent-blankline.nvim")
+time([[Config for indent-blankline.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

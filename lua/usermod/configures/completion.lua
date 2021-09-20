@@ -4,4 +4,5 @@ local set = vim.opt
 set.completeopt = {'menuone','noinsert','noselect'}
 
 vim.g.completion_matching_smart_case = 1
+vim.g.completion_enable_auto_signature = 0
 

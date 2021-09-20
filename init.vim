@@ -4,15 +4,12 @@ set encoding=UTF-8
 set shortmess+=c " Avoid showing message extra message when using completion
 set clipboard=unnamedplus
 
-" Colorscheme
-highlight NvimTreeFolderIcon guibg=blue
-colorscheme palenightfall
-
 lua << EOF
 -- LSP
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.pylsp.setup{}
-require('lspfuzzy').setup {}
+require('lspfuzzy').setup{}
+require "lsp_signature".setup{}
 
 -- lua modules
 require('usermod.packages')
@@ -22,9 +19,18 @@ require('usermod.configures.completion')
 
 EOF
 
+" Colorscheme
+highlight NvimTreeFolderIcon guibg=blue
+let g:onedark_style = 'warmer'
+colorscheme onedark
+
 """""" Map setting 
 imap jj <Esc>
-imap <S-d> <Del>
+imap <M-d> <Del>
+" delete the lint without yanking
+nmap DD "_dd
+nmap <leader>o o<Esc>
+nmap <leader>O O<Esc>
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
@@ -32,8 +38,8 @@ nmap <C-l> <C-w>l
 
 """" Smoothi
 let g:smoothie_no_default_mappings = 1
-nmap <silent> <M-j> <cmd>call smoothie#downwards() <CR>
-nmap <silent> <M-k> <cmd>call smoothie#upwards()   <CR>
+nmap <silent> <C-d> <cmd>call smoothie#downwards() <CR>
+nmap <silent> <C-f> <cmd>call smoothie#upwards()   <CR>
 
 """" Completion
 " Use <Tab> and <S-Tab> to navigate through popup menu

@@ -21,14 +21,15 @@ return require('packer').startup(function(use)
       {'junegunn/fzf.vim'},  -- to enable preview (optional)
     },
   }
-  -- Completion
+    -- Completion
   use 'nvim-lua/completion-nvim'
+    -- Signature
+  use {
+    "ray-x/lsp_signature.nvim",
+  }
 
   -- Colorscheme
-  use {
-    'JoosepAlviste/palenightfall.nvim',
-    config = function() require('usermod.configures.palenightfall') end,
-  }
+  use 'navarasu/onedark.nvim'
 
   -- Status Line
   use {
