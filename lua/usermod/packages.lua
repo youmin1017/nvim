@@ -65,6 +65,9 @@ return require('packer').startup(function(use)
   -- Comment
   use 'tpope/vim-commentary'
   
+  -- Toggleterm
+  use {"akinsho/toggleterm.nvim"}
+
   -- Indent Line
   use { 
     'lukas-reineke/indent-blankline.nvim',

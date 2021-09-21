@@ -11,11 +11,12 @@ require'lspconfig'.pylsp.setup{}
 require('lspfuzzy').setup{}
 require "lsp_signature".setup{}
 
--- lua modules
+-- lua modules setup
 require('usermod.packages')
 require('usermod.configures.treesitter')
 require('usermod.configures.nvimtree')
 require('usermod.configures.completion')
+require('usermod.configures.toggleterm')
 
 EOF
 
@@ -29,6 +30,7 @@ imap jj <Esc>
 imap <M-d> <Del>
 " delete the lint without yanking
 nmap DD "_dd
+nmap <Esc> <cmd>noh <CR>
 nmap <leader>o o<Esc>
 nmap <leader>O O<Esc>
 nmap <C-h> <C-w>h
