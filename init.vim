@@ -2,17 +2,19 @@ set tabstop=2 shiftwidth=2 expandtab
 set updatetime=300
 set encoding=UTF-8
 set shortmess+=c " Avoid showing message extra message when using completion
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
+set cursorline
 
 lua << EOF
 -- LSP
 require'lspconfig'.tsserver.setup{}
-require'lspconfig'.pylsp.setup{}
+require'lspconfig'.pyright.setup{}
 require('lspfuzzy').setup{}
 require "lsp_signature".setup{}
 
 -- lua modules setup
 require('usermod.packages')
+require('usermod.setting')
 require('usermod.configures.treesitter')
 require('usermod.configures.nvimtree')
 require('usermod.configures.completion')
@@ -28,15 +30,27 @@ colorscheme onedark
 """""" Map setting 
 imap jj <Esc>
 imap <M-d> <Del>
-" delete the lint without yanking
-nmap DD "_dd
+
 nmap <Esc> <cmd>noh <CR>
+
+" Put empty line
 nmap <leader>o o<Esc>
 nmap <leader>O O<Esc>
+
+" Move buffer quickly
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
+
+" Clipboard map in visual mode
+nmap <leader>p "+gp
+xmap <leader>d "+d
+xmap <leader>y "+y
+
+"""" Toggleterm
+lua vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+nmap <leader>R <cmd>lua RunCode()<CR>
 
 """" Smoothi
 let g:smoothie_no_default_mappings = 1
@@ -49,15 +63,16 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 """" LSP
-nnoremap <silent> <leader>lD <cmd>lua vim.lsp.buf.declaration()      <CR>
-nnoremap <silent> <leader>ls <cmd>lua vim.lsp.buf.document_symbol()  <CR>
-nnoremap <silent> <leader>lr <cmd>lua vim.lsp.buf.references()       <CR>
-nnoremap <silent> <leader>ld <cmd>lua vim.lsp.buf.definition()       <CR>
-nnoremap <silent> <leader>la <cmd>lua vim.lsp.buf.code_action()      <CR>
-nnoremap <silent> <leader>lk <cmd>lua vim.lsp.diagnostic.goto_prev() <CR>
-nnoremap <silent> <leader>lj <cmd>lua vim.lsp.diagnostic.goto_next() <CR>
-nnoremap <silent> <leader>lf <cmd>lua vim.lsp.buf.formatting()       <CR>
-nnoremap <silent> <leader><F2> <cmd>lua vim.lsp.buf.rename()         <CR>
+nnoremap <silent> <leader>lD <cmd>lua vim.lsp.buf.declaration()                  <CR>
+nnoremap <silent> <leader>ls <cmd>lua vim.lsp.buf.document_symbol()              <CR>
+nnoremap <silent> <leader>lr <cmd>lua vim.lsp.buf.references()                   <CR>
+nnoremap <silent> <leader>ld <cmd>lua vim.lsp.buf.definition()                   <CR>
+nnoremap <silent> <leader>la <cmd>lua vim.lsp.buf.code_action()                  <CR>
+nnoremap <silent> <leader>lk <cmd>lua vim.lsp.diagnostic.goto_prev()             <CR>
+nnoremap <silent> <leader>lj <cmd>lua vim.lsp.diagnostic.goto_next()             <CR>
+nnoremap <silent> <leader>lf <cmd>lua vim.lsp.buf.formatting()                   <CR>
+nnoremap <silent> <leader>le <cmd>lua vim.lsp.diagnostic.show_line_diagnostics() <CR>
+nnoremap <silent> <leader><F2> <cmd>lua vim.lsp.buf.rename()                     <CR>
 
 """" Nvim Tree
 nnoremap <leader>T :NvimTreeToggle<CR>

@@ -48,5 +48,22 @@ function _lazygit_toggle()
   lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+-- Run Code Functions
+local nvim_command = vim.api.nvim_command
+function RunCode()
+  local filetype = vim.bo.filetype
+
+  if filetype == 'cpp' then
+    nvim_command('TermExec cmd="g++ -std=c++17 % && ./a.out && rm a.out"')
+  elseif filetype == 'python' then
+    nvim_command('TermExec cmd="python3 %"')
+  else
+    error('Unsupported Language')
+  end
+
+end
+
+
+
+
 

@@ -99,6 +99,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/youmin/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
@@ -160,14 +165,21 @@ time([[Defining packer_plugins]], false)
 time([[Config for galaxyline.nvim]], true)
 try_loadstring('\27LJ\1\2=\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0"usermod.configures.statusline\frequire\0', "config", "galaxyline.nvim")
 time([[Config for galaxyline.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-try_loadstring("\27LJ\1\2>\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0#usermod.configures.indent-line\frequire\0", "config", "indent-blankline.nvim")
-time([[Config for indent-blankline.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\1\2<\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0!usermod.configures.telescope\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+try_loadstring("\27LJ\1\2>\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0#usermod.configures.indent-line\frequire\0", "config", "indent-blankline.nvim")
+time([[Config for indent-blankline.nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)
