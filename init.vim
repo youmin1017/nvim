@@ -9,12 +9,13 @@ lua << EOF
 -- LSP
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.pyright.setup{}
-require('lspfuzzy').setup{}
-require "lsp_signature".setup{}
+require'lspfuzzy'.setup{}
+require'lsp_signature'.setup{}
 
 -- lua modules setup
 require('usermod.packages')
 require('usermod.setting')
+require('usermod.configures.lsp_installer')
 require('usermod.configures.treesitter')
 require('usermod.configures.nvimtree')
 require('usermod.configures.completion')
