@@ -17,7 +17,6 @@ require('usermod.packages')
 require('usermod.setting')
 require('usermod.configures.lsp_installer')
 require('usermod.configures.treesitter')
-require('usermod.configures.nvimtree')
 require('usermod.configures.completion')
 require('usermod.configures.toggleterm')
 

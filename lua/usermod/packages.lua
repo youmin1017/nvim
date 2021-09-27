@@ -57,7 +57,8 @@ return require('packer').startup(function(use)
   }
   use { -- File Exploder 
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons'
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function() require'usermod.configures.nvim-tree' end,
   }
   use { -- Fuzzy finder
     'nvim-telescope/telescope.nvim',

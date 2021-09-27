@@ -117,6 +117,7 @@ _G.packer_plugins = {
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/nvim-lspfuzzy"
   },
   ["nvim-tree.lua"] = {
+    config = { "\27LJ\1\2<\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0!usermod.configures.nvim-tree\frequire\0" },
     loaded = true,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
@@ -177,6 +178,10 @@ time([[Config for indent-blankline.nvim]], false)
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\1\2<\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0!usermod.configures.telescope\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\1\2<\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0!usermod.configures.nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
