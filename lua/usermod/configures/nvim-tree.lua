@@ -1,7 +1,7 @@
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 -- following options are the default
-vim.opt.number = false
-vim.opt.wrap = false
+-- vim.wo.number = false
+-- vim.wo.wrap = false
 require'nvim-tree'.setup {
   -- disables netrw completely
   disable_netrw       = true,
@@ -17,7 +17,7 @@ require'nvim-tree'.setup {
   open_on_tab         = true,
   -- hijack the cursor in the tree to put it at the start of the filename
   hijack_cursor       = true,
-  -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually) 
+  -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
   update_cwd          = true,
   -- show lsp diagnostics in the signcolumn
   lsp_diagnostics     = true,

@@ -13,7 +13,7 @@ require("toggleterm").setup{
   shade_terminals = true,
   shading_factor = 1, -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
   start_in_insert = true,
-  insert_mappings = true, -- whether or not the open mapping applies in insert mode
+  insert_mappings = false, -- whether or not the open mapping applies in insert mode
   persist_size = true,
   direction = 'float',
   close_on_exit = true, -- close the terminal window when the process exits
@@ -55,6 +55,8 @@ function RunCode()
 
   if filetype == 'cpp' then
     nvim_command('TermExec cmd="g++ -std=c++17 % && ./a.out && rm a.out"')
+  elseif filetype == 'c' then
+    nvim_command('TermExec cmd="gcc % && ./a.out && rm a.out"')
   elseif filetype == 'python' then
     nvim_command('TermExec cmd="python3 %"')
   else

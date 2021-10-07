@@ -3,8 +3,3 @@
 ## Installation
 ...
 
-## Coc Lists
-
-* TSServer
-* JSON
-* coc-git

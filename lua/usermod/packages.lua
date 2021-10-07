@@ -1,17 +1,11 @@
-local fn = vim.fn
 local cmd = vim.cmd
-local set = vim.opt
-
-vim.g.mapleader = ';'
-
-set.number = true 
 
 cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- Packer itself
   use {'wbthomason/packer.nvim', opt = true}
-  
+
   -- LSP
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
@@ -33,7 +27,7 @@ return require('packer').startup(function(use)
     run = function() vim.fn['mkdp#util#install']() end,
     ft = {'markdown'}
   }
-  
+
   -- Colorscheme
   use 'navarasu/onedark.nvim'
 
@@ -55,7 +49,7 @@ return require('packer').startup(function(use)
       'windwp/nvim-ts-autotag'
     }
   }
-  use { -- File Exploder 
+  use { -- File Exploder
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function() require'usermod.configures.nvim-tree' end,
@@ -71,19 +65,19 @@ return require('packer').startup(function(use)
 
   -- Comment
   use 'tpope/vim-commentary'
-  
+
   -- Toggleterm
   use {"akinsho/toggleterm.nvim"}
 
   -- Indent Line
-  use { 
+  use {
     'lukas-reineke/indent-blankline.nvim',
     config = function() require('usermod.configures.indent-line') end,
-  } 
+  }
 
   -- Auto Pair
   use 'jiangmiao/auto-pairs'
-  
+
   -- Misc
   use 'kyazdani42/nvim-web-devicons'
 

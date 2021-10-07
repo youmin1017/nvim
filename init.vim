@@ -1,3 +1,4 @@
+set nocompatible
 set tabstop=2 shiftwidth=2 expandtab
 set updatetime=300
 set encoding=UTF-8
@@ -37,7 +38,7 @@ nmap <Esc> <cmd>noh <CR>
 nmap <leader>o o<Esc>
 nmap <leader>O O<Esc>
 
-" Move buffer quickly
+" Move buffer easily
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
