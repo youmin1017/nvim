@@ -34,6 +34,10 @@ imap <M-d> <Del>
 
 nmap <Esc> <cmd>noh <CR>
 
+" Python Runner
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <Esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
 " Put empty line
 nmap <leader>o o<Esc>
 nmap <leader>O O<Esc>
