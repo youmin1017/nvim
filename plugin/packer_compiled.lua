@@ -73,9 +73,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
-  ["completion-nvim"] = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/youmin/.local/share/nvim/site/pack/packer/start/completion-nvim"
+    path = "/home/youmin/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/youmin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
   },
   fzf = {
     loaded = true,
@@ -103,6 +107,11 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/youmin/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim"
+  },
+  ["nvim-cmp"] = {
+    config = { "\27LJ\1\2;\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0 usermod.configures.nvim-cmp\frequire\0" },
+    loaded = true,
+    path = "/home/youmin/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -166,6 +175,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\1\2<\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0!usermod.configures.telescope\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+try_loadstring("\27LJ\1\2;\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0 usermod.configures.nvim-cmp\frequire\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\1\2<\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0!usermod.configures.nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 -- Config for: galaxyline.nvim
 time([[Config for galaxyline.nvim]], true)
 try_loadstring('\27LJ\1\2=\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0"usermod.configures.statusline\frequire\0', "config", "galaxyline.nvim")
@@ -174,14 +195,6 @@ time([[Config for galaxyline.nvim]], false)
 time([[Config for indent-blankline.nvim]], true)
 try_loadstring("\27LJ\1\2>\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0#usermod.configures.indent-line\frequire\0", "config", "indent-blankline.nvim")
 time([[Config for indent-blankline.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\1\2<\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0!usermod.configures.telescope\frequire\0", "config", "telescope.nvim")
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\1\2<\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0!usermod.configures.nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads

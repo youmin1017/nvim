@@ -17,7 +17,13 @@ return require('packer').startup(function(use)
     },
   }
     -- Completion
-  use 'nvim-lua/completion-nvim'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use {
+    'hrsh7th/nvim-cmp',
+    config = function() require'usermod.configures.nvim-cmp' end,
+  }
+
     -- Signature
   use {
     "ray-x/lsp_signature.nvim",

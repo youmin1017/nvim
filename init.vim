@@ -18,7 +18,6 @@ require('usermod.packages')
 require('usermod.setting')
 require('usermod.configures.lsp_installer')
 require('usermod.configures.treesitter')
-require('usermod.configures.completion')
 require('usermod.configures.toggleterm')
 
 EOF
@@ -88,5 +87,3 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()  <CR>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()    <CR>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()  <CR>
 
-" Use completion-nvim in every buffer
-autocmd BufEnter * lua require'completion'.on_attach()
