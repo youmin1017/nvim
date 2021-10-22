@@ -1,5 +1,6 @@
 -- Setup nvim-cmp.
 local cmp = require'cmp'
+vim.opt.pumheight = 15
 
 cmp.setup({
   -- snippet = {
