@@ -33,10 +33,6 @@ imap <M-d> <Del>
 
 nmap <Esc> <cmd>noh <CR>
 
-" Python Runner
-autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F9> <Esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-
 " Put empty line
 nmap <leader>o o<Esc>
 nmap <leader>O O<Esc>
@@ -54,7 +50,8 @@ xmap <leader>y "+y
 
 """" Toggleterm
 lua vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
-nmap <leader>R <cmd>lua RunCode()<CR>
+nmap <F9> <cmd> w <CR>:lua RunCode()<CR>
+imap <F9> <cmd> w <CR>:lua RunCode()<CR>
 
 """" Smoothi
 let g:smoothie_no_default_mappings = 1
