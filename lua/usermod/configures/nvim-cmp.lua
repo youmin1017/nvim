@@ -38,6 +38,7 @@ cmp.setup({
   },
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'cmp_tabnine' },
 
     -- For vsnip user.
     -- { name = 'vsnip' },

@@ -60,6 +60,8 @@ function RunCode()
     nvim_command('TermExec cmd="gcc % && ./a.out && rm a.out"')
   elseif filetype == 'python' then
     nvim_command('TermExec cmd="python3 %"')
+  elseif filetype == 'sh' then
+    nvim_command('TermExec cmd="sh %"')
   else
     error('Unsupported Language')
   end

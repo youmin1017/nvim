@@ -23,6 +23,12 @@ return require('packer').startup(function(use)
     'hrsh7th/nvim-cmp',
     config = function() require'usermod.configures.nvim-cmp' end,
   }
+  use { -- Tabnine
+    'tzachar/cmp-tabnine',
+    config = function() require('usermod.configures.cmp_tabnine') end,
+    run='./install.sh',
+    requires = 'hrsh7th/nvim-cmp',
+  }
 
     -- Signature
   use {

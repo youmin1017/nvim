@@ -10,6 +10,7 @@ lua << EOF
 -- LSP
 --require'lspconfig'.tsserver.setup{}
 --require'lspconfig'.pyright.setup{}
+require'lspconfig'.svls.setup{}
 require'lspfuzzy'.setup{}
 require'lsp_signature'.setup{}
 
@@ -19,6 +20,7 @@ require('usermod.setting')
 require('usermod.configures.lsp_installer')
 require('usermod.configures.treesitter')
 require('usermod.configures.toggleterm')
+-- require('usermod.configures.cmp_tabnine')
 EOF
 
 " Colorscheme
