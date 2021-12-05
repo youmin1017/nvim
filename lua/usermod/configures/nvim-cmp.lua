@@ -1,29 +1,51 @@
 -- Setup nvim-cmp.
 local cmp = require'cmp'
-vim.opt.pumheight = 15
+local lspkind = require('lspkind')
+-- vim.opt.pumheight = 15
+
+local source_mapping = {
+	buffer = "[Buffer]",
+	nvim_lsp = "[LSP]",
+	nvim_lua = "[Lua]",
+	cmp_tabnine = "[TN]",
+	path = "[Path]",
+}
 
 cmp.setup({
-  -- snippet = {
-  --   expand = function(args)
-  --     -- For `vsnip` user.
-  --     -- vim.fn["vsnip#anonymous"](args.body)
-
-  --     -- For `luasnip` user.
-  --     -- require('luasnip').lsp_expand(args.body)
-
-  --     -- For `ultisnips` user.
-  --     -- vim.fn["UltiSnips#Anon"](args.body)
-  --   end,
-  -- },
+  snippet = {
+    expand = function(args)
+        vim.fn['UltiSnips#Anon'](args.body)
+    end
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'cmp_tabnine' },
+    { name = 'ultisnips' },
+    { name = 'buffer' },
+  },
+  formatting = {
+      format = function(entry, vim_item)
+        vim_item.kind = lspkind.presets.default[vim_item.kind]
+        local menu = source_mapping[entry.source.name]
+        if entry.source.name == 'cmp_tabnine' then
+          if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+            menu = entry.completion_item.data.detail .. ' ' .. menu
+          end
+          vim_item.kind = '🐬'
+        end
+        vim_item.menu = menu
+        return vim_item
+      end
+  },
   mapping = {
-    ['<Tab>'] = function(fallback)
+    ['<M-j>'] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
       else
         fallback()
       end
     end,
-    ['<S-Tab>'] = function(fallback)
+    ['<M-k>'] = function(fallback)
       if cmp.visible() then
         cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
       else
@@ -34,21 +56,9 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<M-Space>'] = cmp.mapping.complete(),
     ['<C-c>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<CR>'] = cmp.mapping.confirm({
+      cmp.ConfirmBehavior.Replace,
+      select = true
+    })
   },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'cmp_tabnine' },
-
-    -- For vsnip user.
-    -- { name = 'vsnip' },
-
-    -- For luasnip user.
-    -- { name = 'luasnip' },
-
-    -- For ultisnips user.
-    -- { name = 'ultisnips' },
-
-    { name = 'buffer' },
-  }
 })

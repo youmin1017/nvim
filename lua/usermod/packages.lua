@@ -23,6 +23,9 @@ return require('packer').startup(function(use)
     'hrsh7th/nvim-cmp',
     config = function() require'usermod.configures.nvim-cmp' end,
   }
+  use 'onsails/lspkind-nvim'
+  -- Snippet
+  use 'SirVer/ultisnips'
   use { -- Tabnine
     'tzachar/cmp-tabnine',
     config = function() require('usermod.configures.cmp_tabnine') end,

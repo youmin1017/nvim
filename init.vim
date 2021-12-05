@@ -32,6 +32,16 @@ colorscheme onedark
 imap jj <Esc>
 imap <M-d> <Del>
 
+lua << EOF
+local map = vim.api.nvim_set_keymap
+map('n', '<M-h>', '0', { noremap = true, silent = true })
+map('n', '<M-l>', '$', { noremap = true, silent = true })
+map('x', '<M-h>', '0', { noremap = true, silent = true })
+map('x', '<M-l>', '$', { noremap = true, silent = true })
+map('i', '<M-h>', '<Esc>0i', { noremap = true, silent = true })
+map('i', '<M-l>', '<Esc>$a', { noremap = true, silent = true })
+EOF
+
 nmap <Esc> <cmd>noh <CR>
 
 " Put empty line
