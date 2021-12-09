@@ -38,14 +38,14 @@ cmp.setup({
       end
   },
   mapping = {
-    ['<M-j>'] = function(fallback)
+    ['<Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
       else
         fallback()
       end
     end,
-    ['<M-k>'] = function(fallback)
+    ['<S-Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
       else
@@ -58,7 +58,7 @@ cmp.setup({
     ['<C-c>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm({
       cmp.ConfirmBehavior.Replace,
-      select = true
+      select = false
     })
   },
 })

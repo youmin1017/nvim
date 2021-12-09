@@ -61,8 +61,8 @@ xmap <leader>y "+y
 
 """" Toggleterm
 lua vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
-nmap <F9> <cmd> w <CR>:lua RunCode()<CR>
-imap <F9> <cmd> w <CR>:lua RunCode()<CR>
+nmap <F9>      <cmd>w<CR><cmd>lua RunCode()<CR>
+imap <F9> <Esc><cmd>w<CR><cmd>lua RunCode()<CR>
 
 """" Smoothi
 let g:smoothie_no_default_mappings = 1
