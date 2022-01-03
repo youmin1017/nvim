@@ -4,13 +4,13 @@ require('nvim-treesitter.configs').setup {
     use_languagetree = true,
   },
   indent = {
-    enable = true,
+    enable = false,
   },
   autotag = {
     enable = true,
   },
   ensure_installed = {
     'javascript', 'jsdoc', 'typescript', 'tsx', 'json',
-    'python', 'lua', 'bash'
+    'python', 'lua', 'bash', 'cpp', 'c'
   },
 }

@@ -3,13 +3,11 @@ set tabstop=2 shiftwidth=2 expandtab
 set updatetime=300
 set encoding=UTF-8
 set shortmess+=c " Avoid showing message extra message when using completion
-"set clipboard=unnamedplus
 set cursorline
+set relativenumber
 
 lua << EOF
 -- LSP
---require'lspconfig'.tsserver.setup{}
---require'lspconfig'.pyright.setup{}
 require'lspconfig'.svls.setup{}
 require'lspfuzzy'.setup{}
 require'lsp_signature'.setup{}
@@ -20,7 +18,6 @@ require('usermod.setting')
 require('usermod.configures.lsp_installer')
 require('usermod.configures.treesitter')
 require('usermod.configures.toggleterm')
--- require('usermod.configures.cmp_tabnine')
 EOF
 
 " Colorscheme
@@ -34,12 +31,19 @@ imap <M-d> <Del>
 
 lua << EOF
 local map = vim.api.nvim_set_keymap
-map('n', '<M-h>', '0', { noremap = true, silent = true })
-map('n', '<M-l>', '$', { noremap = true, silent = true })
-map('x', '<M-h>', '0', { noremap = true, silent = true })
-map('x', '<M-l>', '$', { noremap = true, silent = true })
-map('i', '<M-h>', '<Esc>0i', { noremap = true, silent = true })
-map('i', '<M-l>', '<Esc>$a', { noremap = true, silent = true })
+local opt = { noremap = true, silent = true }
+map('n', '<M-h>', '0', opt)
+map('n', '<M-l>', '$', opt)
+map('x', '<M-h>', '0', opt)
+map('x', '<M-l>', '$', opt)
+map('i', '<M-h>', '<Esc>0i', opt)
+map('i', '<M-l>', '<Esc>$a', opt)
+
+-- Toggle term
+map('n', '<F7>', '<cmd>TermExec cmd="ssh lilina.csie"<CR>', opt)
+map('n', '<F8>', '<cmd>TermExec cmd="sftp lilina.csie"<CR>', opt)
+map("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", opt)
+
 EOF
 
 nmap <Esc> <cmd>noh <CR>
@@ -55,12 +59,13 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " Clipboard map in visual mode
+xnoremap <expr> P '"_d"'.v:register.'P'
 nmap <leader>p "+gp
+nmap <leader>y "+y
 xmap <leader>d "+d
 xmap <leader>y "+y
 
 """" Toggleterm
-lua vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 nmap <F9>      <cmd>w<CR><cmd>lua RunCode()<CR>
 imap <F9> <Esc><cmd>w<CR><cmd>lua RunCode()<CR>
 
