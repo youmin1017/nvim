@@ -44,7 +44,10 @@ return require('packer').startup(function(use)
   }
 
   -- Colorscheme
-  use 'navarasu/onedark.nvim'
+  use { 
+    'navarasu/onedark.nvim',
+    config = function() require'usermod.configures.onedark' end
+  }
 
   -- Status Line
   use {

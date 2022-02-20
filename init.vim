@@ -22,7 +22,6 @@ EOF
 
 " Colorscheme
 highlight NvimTreeFolderIcon guibg=blue
-let g:onedark_style = 'warmer'
 colorscheme onedark
 
 """""" Map setting 
